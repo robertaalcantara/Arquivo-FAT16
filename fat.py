@@ -3,8 +3,6 @@ arq = open('fat16_1sectorpercluster.img', 'rb')
 
 fat_bs = arq.read(36)
 
-
-
 bytes_per_sector  = int.from_bytes(fat_bs[11:13], "little")
 sector_per_cluster = fat_bs[13]
 num_sector_reserved = int.from_bytes(fat_bs[14:16], "little")
