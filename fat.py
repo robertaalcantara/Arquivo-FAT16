@@ -31,7 +31,7 @@ def comeco():
     # print(total_sectors)
     # print(sector_per_fat)
     inicio_dados = arq.tell()
-
+    print(inicio_dados)
     num_final = arq.seek(0,2)
     arq.seek(inicio_dados,0)
 
@@ -77,10 +77,14 @@ def mostrar_conteudo(arq, conteudo_arq, flag):
             print(f"conteudo {conteudo}")
             
         # se diretorio
+        elif cluster == 0:
+            ini_dados = ((cluster)*sector_per_cluster*bytes_per_sector)
+            print(ini_dados)
+            verifica_arquivo(ini_dados, arq, rootDir,1)
         else: 
             ini_dados = ((cluster-2)*sector_per_cluster*bytes_per_sector)
             print(ini_dados)
-            verifica_arquivo(ini_dados, arq, dados,1)
+            verifica_arquivo(ini_dados, arq, dados, 1)
       
 
 def verifica_arquivo(pos_in, arq, rootDir, flag):
