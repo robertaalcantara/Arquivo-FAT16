@@ -1,8 +1,1 @@
-print(rootDir)
-# print(bytes_per_sector)
-# print(sector_per_cluster)
-# print(num_sector_reserved)
-# print(num_fat)
-# print(num_entries_dir)
-# print(total_sectors)
-# print(sector_per_fat)
+ # else:
